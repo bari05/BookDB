@@ -1,8 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
+import {BrowserRouter, Route} from "react-router-dom";
+import Navbar from "./components/Navbar";
 
-const App = () => {
-  return <h1>Wellcome to Book Finder !</h1>;
-};
-
-ReactDOM.render( <App /> , document.getElementById("root"));
+ReactDOM.render(
+  <React.StrictMode>
+      <BrowserRouter>
+          <Navbar/>
+          <div>
+              <Route path={"/"} exact={true} component={App}/>
+          </div>
+      </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
