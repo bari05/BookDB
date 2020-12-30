@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactPaginate from 'react-paginate';
 import Searchbar from "./components/Searchbar";
 import { getBooksByTerm } from "./api/GoogleAPI";
 import BookList from "./components/BookList";
@@ -29,7 +30,21 @@ const App = () => {
           <Searchbar handleChange={handleChange} handleSubmit={handleSubmit} />
           <BookList books={books} />
           {/* <h1>Wellcome to Book Finder !</h1>; */}
+          {totalPages > 1 ? (
+            <div align="center">
+            <ReactPaginate
+                breakLabel={'. . .'}
+                pageCount={totalPages}
+                marginPagesDisplayed={3}
+                pageRangeDisplayed={4}
+                onPageChange={nextPage}
+                containerClassName={'pagination'}
+                activeClassName={'active'}
+            />
+            </div>) : ("")
+          }
       </div>
+      
   );
   };
 
