@@ -1,7 +1,13 @@
 import React from 'react';
+import Searchbar from "./components/Searchbar";
 
 const App = () => {
-    return <h1>Wellcome to Book Finder !</h1>;
+    return (
+        <div>
+            <Searchbar handleChange="" handleSubmit="" />
+            <h1>Wellcome to Book Finder !</h1>;
+        </div>
+    );
   };
 
   
