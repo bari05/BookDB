@@ -5,12 +5,12 @@ const Searchbar = (props) => {
         <div className="container">
             <div className="row">
                 <section className="col s6 offset-s3">
-                    <form action="" onSubmit="">
+                    <form action="" onSubmit={props.handleSubmit}>
                         <div className="input-field">
                             <input
                                 placeholder="Search for Books"
                                 type="text"
-                                onChange=""
+                                onChange={props.handleChange}
                             />
                             <div className="col s1 offset-s4">
                                 <button className="waves-effect waves-light btn">Search</button>
