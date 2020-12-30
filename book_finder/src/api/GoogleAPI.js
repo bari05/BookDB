@@ -20,4 +20,12 @@ const getBooksByTerm = (SearchTerm, setBooks, page_number, setTotalPages, sort =
     });
 };
 
-export { getBooksByTerm };
+const getBooksById = (BookId, SetCurrentBook) => {
+    Googleapi.get("/volumes/" + BookId)
+        .then((response) => {
+        console.log(response.data);
+        SetCurrentBook(response.data);
+    });
+};
+
+export { getBooksByTerm, getBooksById };

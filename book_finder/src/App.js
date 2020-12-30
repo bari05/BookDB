@@ -20,14 +20,14 @@ const App = () => {
   };
 
   const nextPage = async (page_number) => {
+    await getBooksByTerm(searchTerm, setBooks, page_number.selected+1, setTotalPages);
     setCurrentPage(page_number.selected+1);
-    await getBooksByTerm(searchTerm, setBooks, currentPage, setTotalPages);
-    
   };
-
+  
   return (
       <div>
           <Searchbar handleChange={handleChange} handleSubmit={handleSubmit} />
+          
           <BookList books={books} />
           {/* <h1>Wellcome to Book Finder !</h1>; */}
           {totalPages > 1 ? (
